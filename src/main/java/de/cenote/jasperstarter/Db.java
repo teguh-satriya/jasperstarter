@@ -204,9 +204,23 @@ public class Db {
     
     public MongoDbConnection getMongoConnection(Config config) throws ClassNotFoundException, SQLException, JRException {
         MongoDbConnection conn = null;
-        String dbUrl = config.getDbUrl();
-        conn = new MongoDbConnection(dbUrl,null,null);
-
+        String host = config.getDbHost();
+        String user = config.getDbUser();
+        String passwd = config.getDbPasswd();
+        String dbname = config.getDbName();
+        String port = config.getDbPort().toString();
+        
+        try {
+            if(port == null || port == "")
+            {
+                port = "27017";
+            }
+            
+            conn = new MongoDbConnection("mongodb://" + host + ":" + port + "/" + dbname, user, passwd);
+        } catch (JRException e) {
+            throw new IllegalArgumentException("JREException : "+e.getMessage());
+        }
+        
         return conn;
     }
 }

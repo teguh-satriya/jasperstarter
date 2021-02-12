@@ -475,7 +475,10 @@ public class App {
                 allArguments.get(Dest.DB_NAME).required(true);
                 allArguments.get(Dest.DB_PORT).setDefault(DsType.mysql.getPort());
             }  else if (config.getDbType().equals(DsType.mongodb)) {
-                allArguments.get(Dest.DB_URL).required(true);
+                allArguments.get(Dest.DB_HOST).required(true);
+                allArguments.get(Dest.DB_USER).required(true);
+                allArguments.get(Dest.DB_NAME).required(true);
+                allArguments.get(Dest.DB_PORT).setDefault(DsType.mongodb.getPort());
             } else if (config.getDbType().equals(DsType.postgres)) {
                 allArguments.get(Dest.DB_HOST).required(true);
                 allArguments.get(Dest.DB_USER).required(true);
