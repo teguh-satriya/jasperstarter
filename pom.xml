@@ -87,6 +87,13 @@ limitations under the License.
 	<name>jr-ce-releases</name>
 	<url>https://jaspersoft.jfrog.io/jaspersoft/jr-ce-releases/</url>
       </repository>
+      <repository>
+            <id>MongoJasperRepo</id>
+            <url>http://jaspersoft.artifactoryonline.com/jaspersoft/jaspersoft-repo</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
     </repositories>
     <build>
         <!--
@@ -383,27 +390,27 @@ limitations under the License.
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>6.7.0</version>
+            <version>6.10.0</version>
         </dependency>
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports-fonts</artifactId>
-            <version>6.0.0</version>
+            <version>6.10.0</version>
         </dependency>
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports-functions</artifactId>
-            <version>6.7.0</version>
+            <version>6.10.0</version>
         </dependency>
         <dependency>
           <groupId>net.sf.jasperreports</groupId>
           <artifactId>jasperreports-chart-customizers</artifactId>
-          <version>6.7.0</version>
+          <version>6.10.0</version>
         </dependency>
         <dependency>
           <groupId>net.sf.jasperreports</groupId>
           <artifactId>jasperreports-chart-themes</artifactId>
-          <version>6.7.0</version>
+          <version>6.10.0</version>
         </dependency>
         <dependency>
           <groupId>org.springframework</groupId>
@@ -537,6 +544,11 @@ limitations under the License.
           <groupId>com.google.zxing</groupId>
           <artifactId>core</artifactId>
           <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jaspersoft.connectors.mongodb</groupId>
+            <artifactId>js-mongodb-datasource</artifactId>
+            <version>0.9.3</version>
         </dependency>
     </dependencies>
     
