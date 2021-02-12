@@ -15,6 +15,7 @@
  */
 package de.cenote.jasperstarter;
 
+import com.jaspersoft.mongodb.connection.MongoDbConnection;
 import de.cenote.jasperstarter.types.DsType;
 
 import java.io.PrintStream;
@@ -197,6 +198,14 @@ public class Db {
 
         Class.forName(driver);
         conn = DriverManager.getConnection(connectString, user, passwd);
+
+        return conn;
+    }
+    
+    public MongoDbConnection getMongoConnection(Config config) throws ClassNotFoundException, SQLException, JRException {
+        MongoDbConnection conn = null;
+        String dbUrl = config.getDbUrl();
+        conn = new MongoDbConnection(dbUrl,null,null);
 
         return conn;
     }

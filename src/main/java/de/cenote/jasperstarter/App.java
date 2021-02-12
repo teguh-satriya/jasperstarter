@@ -414,7 +414,7 @@ public class App {
         ArgumentGroup groupDatasourceOptions = parser.addArgumentGroup("datasource options");
         groupDatasourceOptions.addArgument("-t").metavar("<dstype>").dest(Dest.DS_TYPE).
                 required(false).type(Arguments.enumType(DsType.class)).setDefault(DsType.none).
-                help("datasource type: none, csv, xml, json, jsonql, mysql, postgres, oracle, generic (jdbc)");
+                help("datasource type: none, csv, xml, json, jsonql, mysql, postgres, oracle, generic (jdbc), mongodb");
         Argument argDbHost = groupDatasourceOptions.addArgument("-H").metavar("<dbhost>").dest(Dest.DB_HOST).help("database host");
         Argument argDbUser = groupDatasourceOptions.addArgument("-u").metavar("<dbuser>").dest(Dest.DB_USER).help("database user");
         Argument argDbPasswd = groupDatasourceOptions.addArgument("-p").metavar("<dbpasswd>").dest(Dest.DB_PASSWD).setDefault("").help("database password");
@@ -474,6 +474,8 @@ public class App {
                 allArguments.get(Dest.DB_USER).required(true);
                 allArguments.get(Dest.DB_NAME).required(true);
                 allArguments.get(Dest.DB_PORT).setDefault(DsType.mysql.getPort());
+            }  else if (config.getDbType().equals(DsType.mongodb)) {
+                allArguments.get(Dest.DB_URL).required(true);
             } else if (config.getDbType().equals(DsType.postgres)) {
                 allArguments.get(Dest.DB_HOST).required(true);
                 allArguments.get(Dest.DB_USER).required(true);

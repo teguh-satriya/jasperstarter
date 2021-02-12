@@ -15,6 +15,7 @@
  */
 package de.cenote.jasperstarter;
 
+import com.jaspersoft.mongodb.connection.MongoDbConnection;
 import de.cenote.jasperstarter.gui.ParameterPrompt;
 import de.cenote.jasperstarter.types.DsType;
 import de.cenote.jasperstarter.types.InputType;
@@ -332,7 +333,12 @@ public class Report {
                     Db db = new Db();
                     JsonQLDataSource ds = db.getJsonQLDataSource(config);
                     jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, ds);
-                } else {
+                } else if (DsType.mongodb.equals(config.getDbType())){
+                    Db db = new Db();
+                    MongoDbConnection con = db.getMongoConnection(config);
+                    jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, con);
+                    con.close();
+                }else {
                     Db db = new Db();
                     Connection con = db.getConnection(config);
                     jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, con);
