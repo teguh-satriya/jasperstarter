@@ -21,6 +21,7 @@ import de.cenote.jasperstarter.types.DsType;
 import de.cenote.jasperstarter.types.Dest;
 import de.cenote.jasperstarter.types.OutputFormat;
 import de.cenote.tools.classpath.ApplicationClasspath;
+import de.cenote.tools.classpath.ClassLoaderConfig;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;

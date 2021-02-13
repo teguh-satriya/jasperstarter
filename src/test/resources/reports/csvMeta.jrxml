@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="noDB-i18n" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="noDB-i18n" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1c6e74a0-543d-4da6-b439-c9aa0def9ddf">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<property name="net.sf.jasperreports.export.csv.write.header" value="true"/>
 	<property name="net.sf.jasperreports.export.xls.write.header" value="true"/>
 	<parameter name="myString" class="java.lang.String"/>
+	<queryString language="csv">
+		<![CDATA[]]>
+	</queryString>
 	<field name="Name" class="java.lang.String"/>
 	<field name="Street" class="java.lang.String"/>
 	<field name="City" class="java.lang.String"/>
@@ -16,28 +20,28 @@
 	<title>
 		<band height="72">
 			<frame>
-				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699"/>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="d21009c5-8632-4bc5-97db-3d0be901348a"/>
 				<staticText>
-					<reportElement x="20" y="20" width="267" height="43" forecolor="#FFFFFF"/>
+					<reportElement x="20" y="20" width="267" height="43" forecolor="#FFFFFF" uuid="746e5027-33e5-42d6-ae45-31242f061a46"/>
 					<textElement>
 						<font size="34" isBold="true"/>
 					</textElement>
 					<text><![CDATA[JasperStarter]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="298" y="43" width="277" height="20" forecolor="#FFFFFF"/>
+					<reportElement x="298" y="43" width="277" height="20" forecolor="#FFFFFF" uuid="979d7ad0-08e5-47d4-9cd0-e4209fd81ef3"/>
 					<textElement textAlignment="Right">
 						<font size="14" isBold="false"/>
 					</textElement>
 					<text><![CDATA[Report with CSV Datasource]]></text>
 				</staticText>
-                <staticText>
-                    <reportElement x="298" y="63" width="277" height="20" forecolor="#FFFFFF"/>
-                    <textElement textAlignment="Right">
-                        <font size="9" isBold="false"/>
-                    </textElement>
-                    <text><![CDATA[includes Metadata Properties for Export]]></text>
-                </staticText>
+				<staticText>
+					<reportElement x="298" y="63" width="277" height="20" forecolor="#FFFFFF" uuid="e8e0cb73-bead-4422-80fb-89845e9691fb"/>
+					<textElement textAlignment="Right">
+						<font size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[includes Metadata Properties for Export]]></text>
+				</staticText>
 			</frame>
 		</band>
 	</title>
@@ -47,31 +51,31 @@
 	<columnHeader>
 		<band height="30">
 			<line>
-				<reportElement x="-20" y="21" width="595" height="1" forecolor="#666666"/>
+				<reportElement x="-20" y="21" width="595" height="1" forecolor="#666666" uuid="4d05db36-d44f-411c-bbc9-a031ce78c539"/>
 			</line>
 			<staticText>
-				<reportElement x="320" y="0" width="133" height="20"/>
+				<reportElement x="320" y="0" width="133" height="20" uuid="1276baa8-e0b8-443d-a790-966f76989c7d"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[City]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="0" width="97" height="20"/>
+				<reportElement x="3" y="0" width="97" height="20" uuid="4eb65abf-4082-44b7-9cae-4cfd908d816f"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="100" y="0" width="200" height="20"/>
+				<reportElement x="100" y="0" width="200" height="20" uuid="35e9fb41-30a9-4854-a1f5-3ac1ed70c4f6"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Street]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="450" y="0" width="140" height="20"/>
+				<reportElement x="450" y="0" width="140" height="20" uuid="b68df325-5b9e-4101-bd47-72ddf7a37e80"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
@@ -81,37 +85,32 @@
 	</columnHeader>
 	<detail>
 		<band height="24">
-		    <!-- The order of this textField tags sets the order of the exported fields for csv. -->
-            <textField>
-                <reportElement x="3" y="0" width="97" height="20">
-                    <property name="net.sf.jasperreports.export.csv.column.name" value="Name"/>
-                    <property name="net.sf.jasperreports.export.xls.column.name" value="Name"/>
-                </reportElement>
-                <textElement/>
-                <textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
-            </textField>
-            <textField>
-                <reportElement x="100" y="0" width="200" height="20">
-                    <property name="net.sf.jasperreports.export.csv.column.name" value="Street"/>
-                    <property name="net.sf.jasperreports.export.xls.column.name" value="Street"/>
-                </reportElement>
-                <textElement/>
-                <textFieldExpression><![CDATA[$F{Street}]]></textFieldExpression>
-            </textField>
 			<textField>
-				<reportElement x="320" y="0" width="133" height="20">
-                    <property name="net.sf.jasperreports.export.csv.column.name" value="City"/>
-                    <property name="net.sf.jasperreports.export.xls.column.name" value="City"/>
-                </reportElement>
-				<textElement/>
+				<reportElement x="3" y="0" width="97" height="20" uuid="f80a3063-d1d5-4b52-b495-723d17354323">
+					<property name="net.sf.jasperreports.export.csv.column.name" value="Name"/>
+					<property name="net.sf.jasperreports.export.xls.column.name" value="Name"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="200" height="20" uuid="3420be32-7104-47b2-82db-c9d394d4bb05">
+					<property name="net.sf.jasperreports.export.csv.column.name" value="Street"/>
+					<property name="net.sf.jasperreports.export.xls.column.name" value="Street"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Street}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="133" height="20" uuid="cde0afe6-01d2-4f4c-b63e-adebcff176ae">
+					<property name="net.sf.jasperreports.export.csv.column.name" value="City"/>
+					<property name="net.sf.jasperreports.export.xls.column.name" value="City"/>
+				</reportElement>
 				<textFieldExpression><![CDATA[$F{City}]]></textFieldExpression>
 			</textField>
-            <textField>
-				<reportElement x="450" y="0" width="140" height="20">
-                    <property name="net.sf.jasperreports.export.csv.column.name" value="Phone"/>
-                    <property name="net.sf.jasperreports.export.xls.column.name" value="Phone"/>
-                </reportElement>
-				<textElement/>
+			<textField>
+				<reportElement x="450" y="0" width="140" height="20" uuid="58549c64-f863-4e0e-8360-d916e1a356b6">
+					<property name="net.sf.jasperreports.export.csv.column.name" value="Phone"/>
+					<property name="net.sf.jasperreports.export.xls.column.name" value="Phone"/>
+				</reportElement>
 				<textFieldExpression><![CDATA[$F{Phone}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -122,18 +121,16 @@
 	<pageFooter>
 		<band height="17">
 			<textField>
-				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="75a0de72-98b7-4edb-952e-dc0793f55ef6"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
-				<textElement/>
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="b4160ec4-b273-45dc-be9d-a5f67638e01e"/>
 				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="0" y="4" width="100" height="13"/>
-				<textElement/>
+				<reportElement x="0" y="4" width="100" height="13" uuid="24fd9599-dccd-4734-b909-3ca79023b43c"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>

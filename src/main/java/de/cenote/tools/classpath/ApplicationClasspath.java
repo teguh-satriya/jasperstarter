@@ -23,7 +23,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLClassLoader;
-
 /**
  * <p>ApplicationClasspath class.</p>
  *
@@ -43,7 +42,6 @@ public class ApplicationClasspath {
     /** Constant <code>FIND_FROM_THIS=1</code> */
     public static final int FIND_FROM_THIS = 1;
     private static int defaultBasedirMethod = FIND_FROM_THIS;
-
     /**
      * Adds a filename (absolute path) to the classpath.
      *
@@ -72,7 +70,7 @@ public class ApplicationClasspath {
      * @throws java.io.IOException if any.
      */
     public static void add(URL url) throws IOException {
-        URLClassLoader systemClassLoader = (URLClassLoader) ClassLoader.getSystemClassLoader();
+        URLClassLoader systemClassLoader = new ClassLoaderConfig().getClassLoader();
         Class<?> urlClassLoaderClass = URLClassLoader.class;
         try {
             Method method = urlClassLoaderClass.getDeclaredMethod("addURL", parameterTypes);
